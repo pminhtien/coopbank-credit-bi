@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sơ đồ công việc Khóa luận tốt nghiệp</title>
+<!-- Runtime Styles (Single Source of Truth) -->
+<style id="lumi-runtime">
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:ital,wght@0,300..700;1,300..700&family=Google+Sans+Code:ital,wght,MONO@0,300..700,0..1;1,300..700,0..1&display=swap');
+:root {
+  --body-bg: transparent;
+  --ff-sans: 'Google Sans Flex', 'Google Sans Text', 'Google Sans', sans-serif;
+  --ff-mono: 'Google Sans Code', 'Google Sans Mono', monospace;
+  --lumi-sys-spacing--xxs: 2px; --lumi-sys-spacing--xs: 4px; --lumi-sys-spacing--s: 8px;
+  --lumi-sys-spacing--m: 12px; --lumi-sys-spacing--l: 16px; --lumi-sys-spacing--xl: 20px;
+  --lumi-sys-shape--small: 8px; --lumi-sys-shape--medium: 12px; --lumi-sys-shape--large: 16px;
+  --lumi-sys-shape--full: 999px;
+  --lumi-sys-color--surface: #fdfcfc; --lumi-sys-color--surface-dim: #f2f0f0;
+  --lumi-sys-color--surface-bright: #ffffff; --lumi-sys-color--surface-container: #f2f0f0;
+  --lumi-sys-color--surface-container-high: #e6e6e6;
+  --lumi-sys-color--on-surface: #000000; --lumi-sys-color--on-surface-variant: rgba(0, 0, 0, 0.55);
+  --lumi-sys-color--on-surface-low: rgba(0, 0, 0, 0.08);
+  --lumi-sys-color--positive: #008052; --lumi-sys-color--positive-container: #daf9d4;
+  --lumi-sys-color--error: #de2d29; --lumi-sys-color--error-container: #ffdeec;
+  --lumi-sys-color--accent: #9dd2ff; --lumi-sys-color--accent-container: #dcf1ff;
+  --lumi-sys-color--accent-fixed: #3186ff; --lumi-sys-color--primary: #3186ff;
+  --lumi-sys-color--outline: #727676; --lumi-sys-color--stroke-default: #e3e3e3;
+}
+:root[data-theme="dark"], body.dark-mode, :root[data-theme="dark"] body {
+  --body-bg: #0f0f0f;
+  --lumi-sys-color--surface: #0f0f0f; --lumi-sys-color--surface-dim: #141414;
+  --lumi-sys-color--surface-bright: #1c1c1c; --lumi-sys-color--surface-container: #141414;
+  --lumi-sys-color--surface-container-high: #1c1c1c;
+  --lumi-sys-color--on-surface: #e0e0e0; --lumi-sys-color--on-surface-variant: rgba(255, 255, 255, 0.55);
+  --lumi-sys-color--on-surface-low: rgba(255, 255, 255, 0.12);
+  --lumi-sys-color--positive: #0ebc5f; --lumi-sys-color--positive-container: #002220;
+  --lumi-sys-color--error: #ff4c45; --lumi-sys-color--error-container: #3c0202;
+  --lumi-sys-color--accent: #1f3b9b; --lumi-sys-color--accent-container: #192967;
+  --lumi-sys-color--accent-fixed: #3186ff; --lumi-sys-color--primary: #9dd2ff;
+  --lumi-sys-color--outline: #9a9b9c; --lumi-sys-color--stroke-default: #2d2f38;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --body-bg: #0f0f0f;
+    --lumi-sys-color--surface: #0f0f0f; --lumi-sys-color--surface-dim: #141414;
+    --lumi-sys-color--surface-bright: #1c1c1c; --lumi-sys-color--surface-container: #141414;
+    --lumi-sys-color--surface-container-high: #1c1c1c;
+    --lumi-sys-color--on-surface: #e0e0e0; --lumi-sys-color--on-surface-variant: rgba(255, 255, 255, 0.55);
+    --lumi-sys-color--on-surface-low: rgba(255, 255, 255, 0.12);
+    --lumi-sys-color--positive: #0ebc5f; --lumi-sys-color--positive-container: #002220;
+    --lumi-sys-color--error: #ff4c45; --lumi-sys-color--error-container: #3c0202;
+    --lumi-sys-color--accent: #1f3b9b; --lumi-sys-color--accent-container: #192967;
+    --lumi-sys-color--accent-fixed: #3186ff; --lumi-sys-color--primary: #9dd2ff;
+    --lumi-sys-color--outline: #9a9b9c; --lumi-sys-color--stroke-default: #2d2f38;
+  }
+}
+:root {
+  --surface: var(--lumi-sys-color--surface); --surface-dim: var(--lumi-sys-color--surface-dim);
+  --surface-bright: var(--lumi-sys-color--surface-bright); --surface-container: var(--lumi-sys-color--surface-container);
+  --surface-container-high: var(--lumi-sys-color--surface-container-high);
+  --on-surface: var(--lumi-sys-color--on-surface); --on-surface-variant: var(--lumi-sys-color--on-surface-variant);
+  --primary: var(--lumi-sys-color--primary); --accent: var(--lumi-sys-color--accent);
+  --accent-container: var(--lumi-sys-color--accent-container); --accent-fixed: var(--lumi-sys-color--accent-fixed);
+  --positive: var(--lumi-sys-color--positive); --positive-container: var(--lumi-sys-color--positive-container);
+  --error: var(--lumi-sys-color--error); --error-container: var(--lumi-sys-color--error-container);
+  --outline: var(--lumi-sys-color--outline); --stroke-default: var(--lumi-sys-color--stroke-default);
+  --r-full: var(--lumi-sys-shape--full); --r-m: var(--lumi-sys-shape--medium);
+}
+html, body {
+  background: var(--body-bg) !important; color: var(--on-surface) !important;
+  overflow-y: hidden; -webkit-font-smoothing: antialiased; font-optical-sizing: auto;
+}
+.widget-container { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+.lumi-chip {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 32px; padding: 0 16px;
+  font-family: var(--ff-sans); font-size: 14px; font-weight: 500;
+  color: var(--on-surface); background: var(--surface-dim); border: 1px solid transparent;
+  border-radius: var(--r-full); cursor: pointer; user-select: none; white-space: nowrap; transition: 0.15s;
+}
+.lumi-chip:hover { background: var(--surface-container-high); }
+.lumi-chip.is-active {
+  color: var(--accent-fixed); background: var(--accent-container); font-weight: 600;
+}
+.lumi-headline-m { font-family: var(--ff-sans); font-size: 24px; font-weight: 540; line-height: 28px; }
+.lumi-headline-s { font-family: var(--ff-sans); font-size: 20px; font-weight: 580; line-height: 24px; }
+.lumi-body-m { font-family: var(--ff-sans); font-size: 15px; line-height: 20px; }
+.lumi-body-s { font-family: var(--ff-sans); font-size: 13px; line-height: 17px; }
+
+/* Quan trọng: Fix cứng màu text cho toàn bộ SVG */
+svg text { stroke: none; paint-order: fill; fill: var(--on-surface); }
+
+/* Checkbox */
+.lumi-checkbox-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-family: var(--ff-sans); font-size: 15px; color: var(--on-surface); user-select: none; }
+.lumi-checkbox-label input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
+.lumi-checkbox { position: relative; width: 20px; height: 20px; border-radius: 6px; border: 2px solid var(--on-surface-variant); display: flex; align-items: center; justify-content: center; transition: 0.15s; box-sizing: border-box; }
+.lumi-checkbox-label:hover .lumi-checkbox { border-color: var(--on-surface); }
+.lumi-checkbox-label input[type="checkbox"]:checked ~ .lumi-checkbox { background-color: var(--accent-fixed); border-color: transparent; }
+.lumi-checkmark { font-size: 14px; color: #fff; fill: #fff; display: none; }
+.lumi-checkbox-label input[type="checkbox"]:checked ~ .lumi-checkbox .lumi-checkmark { display: block; }
+</style>
+
+<style>
+  .widget-wrapper {
+    display: flex; flex-direction: column; gap: var(--lumi-sys-spacing--m);
+    font-family: var(--ff-sans); box-sizing: border-box;
+  }
+  .header-section {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding: 12px 16px 0 16px;
+  }
+  .progress-badge {
+    background: var(--surface-dim); border: 1px solid var(--stroke-default);
+    padding: 4px 12px; border-radius: var(--r-full); font-family: var(--ff-mono); font-size: 14px; font-weight: 600;
+  }
+  .toolbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 16px; gap: 8px; flex-wrap: wrap;
+  }
+  .filter-group { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  .filter-group::-webkit-scrollbar { display: none; }
+  
+  .zoom-controls {
+    display: flex; align-items: center; gap: 4px; background: var(--surface-dim);
+    padding: 2px; border-radius: var(--r-full); border: 1px solid var(--stroke-default);
+  }
+  .zoom-btn {
+    border: none; background: transparent; color: var(--on-surface); width: 28px; height: 28px;
+    border-radius: var(--r-full); cursor: pointer; font-size: 16px; transition: 0.15s;
+  }
+  .zoom-btn:hover { background: var(--surface-container-high); }
+  .zoom-readout { font-family: var(--ff-mono); font-size: 12px; min-width: 42px; text-align: center; }
+
+  .viewport {
+    position: relative; width: 100%; height: 500px; background: var(--surface-dim);
+    border-radius: var(--r-m); border: 1px solid var(--stroke-default);
+    overflow: hidden; cursor: grab; user-select: none; touch-action: none;
+  }
+  .viewport:active { cursor: grabbing; }
+  .diagram-svg { width: 100%; height: 100%; display: block; }
+
+  /* SVG Interactions */
+  .state-node { cursor: pointer; transition: 0.2s; }
+  .state-node:hover rect, .state-node:hover polygon { stroke: var(--primary) !important; stroke-width: 2px !important; }
+  .state-node.is-selected rect, .state-node.is-selected polygon { stroke: var(--primary) !important; stroke-width: 3px !important; filter: drop-shadow(0 0 6px var(--accent)); }
+  .state-node.is-completed rect, .state-node.is-completed polygon { fill: var(--positive-container) !important; stroke: var(--positive) !important; }
+  .state-node.is-completed.is-selected rect, .state-node.is-completed.is-selected polygon { stroke-width: 3px !important; filter: drop-shadow(0 0 6px var(--positive)); }
+  
+  .transition-edge path, .transition-edge line { pointer-events: stroke; cursor: pointer; }
+  .transition-edge:hover path, .transition-edge:hover line { stroke-width: 2.5px !important; stroke: var(--primary) !important; }
+  .transition-edge.edge-loop path, .transition-edge.edge-loop line { stroke: var(--error); stroke-dasharray: 4 4; }
+  
+  .edge-pill { cursor: pointer; }
+  .edge-pill rect { fill: var(--surface-bright); stroke: var(--stroke-default); rx: 12; transition: 0.2s; }
+  .edge-pill:hover rect { fill: var(--accent-container) !important; stroke: var(--primary); }
+  .edge-pill text { font-family: var(--ff-sans); font-size: 12px; fill: var(--on-surface); font-weight: 500; }
+
+  .fade-out { opacity: 0.15; }
+
+  /* Detail Panel */
+  .detail-panel {
+    background: var(--surface-bright); border: 1px solid var(--stroke-default);
+    border-radius: var(--r-m); padding: 16px; margin: 0 16px 16px 16px;
+    display: grid; grid-template-columns: 1fr; gap: 12px;
+  }
+  .detail-header-row { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--stroke-default); padding-bottom: 12px; }
+  .badge { font-family: var(--ff-mono); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: var(--r-full); background: var(--surface-container-high); color: var(--on-surface); }
+  .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  .detail-block { background: var(--surface-container); padding: 12px; border-radius: var(--r-m); }
+  .block-title { font-size: 12px; font-family: var(--ff-mono); color: var(--on-surface-variant); margin-bottom: 4px; text-transform: uppercase; font-weight: 600; }
+  .link-node { cursor: pointer; color: var(--accent-fixed); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+  .link-node:hover { color: var(--primary); }
+</style>
+
+<script id="lumi-os-theme-init">
+(function(){
+  function syncBody(){ var dt=document.documentElement.getAttribute('data-theme'); if(document.body && (dt==='dark'||dt==='light')) document.body.classList.toggle('dark-mode', dt==='dark'); }
+  function syncTheme(theme){ if(theme!=='dark'&&theme!=='light')return; document.documentElement.setAttribute('data-theme',theme); syncBody(); }
+  if(typeof MutationObserver==='function') new MutationObserver(syncBody).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  document.addEventListener('DOMContentLoaded',syncBody);
+  try{ var mq=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)'); if(mq){ var cur=document.documentElement.getAttribute('data-theme'); if(!cur)syncTheme(mq.matches?'dark':'light'); else syncTheme(cur); if(mq.addEventListener)mq.addEventListener('change',function(e){syncTheme(e.matches?'dark':'light');}); } }catch(e){}
+  window.addEventListener('message',function(e){ if(e.data&&(e.data.type==='set-theme'||e.data.type==='APPLY_THEME')&&e.data.theme)syncTheme(e.data.theme); });
+})();
+</script>
+</head>
+<body>
+
+<div class="widget-container widget-wrapper">
+  
+  <div class="header-section">
+    <div>
+      <h2 class="lumi-headline-m" style="margin:0">Sơ đồ Khóa luận Hệ thống Báo cáo Tín dụng</h2>
+      <p class="lumi-body-s" style="margin:4px 0 0 0; color:var(--on-surface-variant)">Quản lý tiến độ Data Mart & Power BI - Ngân hàng Hợp tác xã Việt Nam</p>
+    </div>
+    <div class="progress-badge">Tiến độ: <span id="progress-text" style="color:var(--primary)">0</span>/16 công việc</div>
+  </div>
+
+  <div class="toolbar">
+    <div class="filter-group">
+      <button class="lumi-chip is-active" data-filter="all" onclick="setFilter('all')">Tất cả</button>
+      <button class="lumi-chip" data-filter="main" onclick="setFilter('main')">Luồng chính</button>
+      <button class="lumi-chip" data-filter="loop" onclick="setFilter('loop')">Vòng lặp sửa lại</button>
+      <div style="width: 1px; background: var(--stroke-default); margin: 0 4px;"></div>
+      <button class="lumi-chip" data-filter="stage-A" onclick="setFilter('stage-A')">GĐ A</button>
+      <button class="lumi-chip" data-filter="stage-B" onclick="setFilter('stage-B')">GĐ B</button>
+      <button class="lumi-chip" data-filter="stage-C" onclick="setFilter('stage-C')">GĐ C</button>
+      <button class="lumi-chip" data-filter="stage-D" onclick="setFilter('stage-D')">GĐ D</button>
+      <button class="lumi-chip" data-filter="stage-E" onclick="setFilter('stage-E')">GĐ E</button>
+      <button class="lumi-chip" data-filter="stage-F" onclick="setFilter('stage-F')">GĐ F</button>
+    </div>
+    <div class="zoom-controls">
+      <button class="zoom-btn" onclick="adjustZoom(-0.15)">&minus;</button>
+      <span class="zoom-readout" id="zoom-text">100%</span>
+      <button class="zoom-btn" onclick="adjustZoom(0.15)">&plus;</button>
+      <button class="zoom-btn" onclick="resetView()">&#x21bb;</button>
+    </div>
+  </div>
+
+  <div class="viewport" id="viewport">
+    <!-- ViewBox wide enough for 6 columns. Centers: A=140, B=460, C=780, D=1100, E=1420, F=1740. Total width 1880 -->
+    <svg class="diagram-svg" viewBox="0 0 1880 620">
+      <defs>
+        <marker id="arrow-main" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+          <path d="M 2 1 L 8 5 L 2 9" fill="none" stroke="var(--on-surface)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="arrow-danger" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+          <path d="M 2 1 L 8 5 L 2 9" fill="none" stroke="var(--error)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <g id="scene" transform="matrix(1 0 0 1 0 0)">
+        
+        <!-- Stage Titles -->
+        <g fill="var(--on-surface-variant)" font-family="var(--ff-sans)" font-size="16" font-weight="600" text-anchor="middle">
+          <text x="140" y="40">Giai đoạn A - Nền tảng</text>
+          <text x="460" y="40">Giai đoạn B - Phân tích</text>
+          <text x="780" y="40">GĐ C - Nguồn dữ liệu</text>
+          <text x="1100" y="40">GĐ D - Thiết kế Data Mart</text>
+          <text x="1420" y="40">GĐ E - Triển khai</text>
+          <text x="1740" y="40">GĐ F - Hoàn thiện</text>
+        </g>
+
+        <!-- Edges Layer -->
+        <g id="edges">
+          <!-- Main Flow -->
+          <g class="transition-edge edge-main" data-stage="stage-A stage-A">
+            <line x1="140" y1="135" x2="140" y2="205" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('A1-A2', event)"><rect x="35" y="158" width="210" height="24"/><text x="140" y="174" text-anchor="middle" fill="var(--on-surface)">Repo và môi trường chạy được</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-A stage-B">
+            <path d="M 220 240 L 280 240 Q 300 240 300 220 L 300 120 Q 300 100 320 100 L 380 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('A2-B1', event)"><rect x="235" y="88" width="130" height="24"/><text x="300" y="104" text-anchor="middle" fill="var(--on-surface)">File context chung</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-B stage-B">
+            <line x1="460" y1="135" x2="460" y2="205" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('B1-B2', event)"><rect x="375" y="158" width="170" height="24"/><text x="460" y="174" text-anchor="middle" fill="var(--on-surface)">Tài liệu nghiệp vụ đã chốt</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-B stage-B">
+            <line x1="460" y1="275" x2="460" y2="345" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('B2-B3', event)"><rect x="370" y="298" width="180" height="24"/><text x="460" y="314" text-anchor="middle" fill="var(--on-surface)">Danh sách KPI có công thức</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-B stage-C">
+            <path d="M 540 380 L 600 380 Q 620 380 620 360 L 620 120 Q 620 100 640 100 L 700 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('B3-C1', event)"><rect x="520" y="88" width="200" height="24"/><text x="620" y="104" text-anchor="middle" fill="var(--on-surface)">Bảng KPI - trường dữ liệu - nguồn</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-C stage-C">
+            <line x1="780" y1="135" x2="780" y2="205" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('C1-C2', event)"><rect x="700" y="158" width="160" height="24"/><text x="780" y="174" text-anchor="middle" fill="var(--on-surface)">ERD khái niệm đã duyệt</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-C stage-C">
+            <line x1="780" y1="275" x2="780" y2="345" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('C2-C3', event)"><rect x="715" y="298" width="130" height="24"/><text x="780" y="314" text-anchor="middle" fill="var(--on-surface)">DDL core_banking</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-C stage-C">
+            <line x1="780" y1="415" x2="780" y2="480" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('C3-C4', event)"><rect x="715" y="435" width="130" height="24"/><text x="780" y="451" text-anchor="middle" fill="var(--on-surface)">Dữ liệu mô phỏng</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-C stage-D">
+            <path d="M 870 520 L 920 520 Q 940 520 940 500 L 940 120 Q 940 100 960 100 L 1020 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('C4-D1', event)"><rect x="895" y="88" width="90" height="24"/><text x="940" y="104" text-anchor="middle" fill="var(--on-surface)">Dữ liệu đủ</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-D stage-D">
+            <line x1="1100" y1="135" x2="1100" y2="205" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('D1-D2', event)"><rect x="1050" y="158" width="100" height="24"/><text x="1100" y="174" text-anchor="middle" fill="var(--on-surface)">Tài liệu grain</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-D stage-D">
+            <line x1="1100" y1="275" x2="1100" y2="345" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('D2-D3', event)"><rect x="1035" y="298" width="130" height="24"/><text x="1100" y="314" text-anchor="middle" fill="var(--on-surface)">Danh sách Fact/Dim</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-D stage-E">
+            <path d="M 1180 380 L 1240 380 Q 1260 380 1260 360 L 1260 120 Q 1260 100 1280 100 L 1340 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('D3-E1', event)"><rect x="1225" y="88" width="70" height="24"/><text x="1260" y="104" text-anchor="middle" fill="var(--on-surface)">DDL dwh</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-E stage-E">
+            <line x1="1420" y1="135" x2="1420" y2="205" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('E1-E2', event)"><rect x="1325" y="158" width="190" height="24"/><text x="1420" y="174" text-anchor="middle" fill="var(--on-surface)">Dữ liệu đã nạp Data Mart</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-E stage-E">
+            <line x1="1420" y1="275" x2="1420" y2="340" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('E2-E3', event)"><rect x="1355" y="298" width="130" height="24"/><text x="1420" y="314" text-anchor="middle" fill="var(--on-surface)">Báo cáo hoàn chỉnh</text></g>
+          </g>
+
+          <g class="transition-edge edge-main" data-stage="stage-E stage-F">
+            <path d="M 1510 380 L 1560 380 Q 1580 380 1580 360 L 1580 120 Q 1580 100 1600 100 L 1660 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('E3-F1', event)"><rect x="1525" y="88" width="110" height="24"/><text x="1580" y="104" text-anchor="middle" fill="var(--on-surface)">Kết quả kiểm thử</text></g>
+          </g>
+
+          <!-- Return Loops (Error style) -->
+          <g class="transition-edge edge-loop" data-stage="stage-C stage-C">
+            <path d="M 690 520 L 630 520 Q 610 520 610 500 L 610 400 Q 610 380 630 380 L 690 380" fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('C4-C3', event)"><rect x="525" y="438" width="170" height="24"/><text x="610" y="454" text-anchor="middle" fill="var(--error)">Thiếu dữ liệu, sinh thêm</text></g>
+          </g>
+
+          <g class="transition-edge edge-loop" data-stage="stage-C stage-C">
+            <path d="M 690 520 L 580 520 Q 560 520 560 500 L 560 260 Q 560 240 580 240 L 690 240" fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('C4-C2', event)"><rect x="445" y="368" width="230" height="24"/><text x="560" y="384" text-anchor="middle" fill="var(--error)">Thiếu thực thể/thuộc tính, sửa ERD</text></g>
+          </g>
+
+          <g class="transition-edge edge-loop" data-stage="stage-C stage-B">
+            <path d="M 690 520 L 520 520 Q 500 520 500 500 L 500 260 Q 500 240 480 240 L 460 240" fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('C4-B2', event)"><rect x="375" y="478" width="250" height="24"/><text x="500" y="494" text-anchor="middle" fill="var(--error)">KPI không tính được, bỏ hoặc hoãn KPI</text></g>
+          </g>
+
+          <g class="transition-edge edge-loop" data-stage="stage-E stage-E">
+            <path d="M 1330 380 L 1290 380 Q 1270 380 1270 360 L 1270 120 Q 1270 100 1290 100 L 1330 100" fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('E3-E1', event)"><rect x="1185" y="238" width="170" height="24"/><text x="1270" y="254" text-anchor="middle" fill="var(--error)">Số liệu lệch, sửa logic ETL</text></g>
+          </g>
+
+          <g class="transition-edge edge-loop" data-stage="stage-E stage-D">
+            <path d="M 1330 380 L 1200 380 Q 1180 380 1180 360 L 1180 260 Q 1180 240 1160 240 L 1140 240" fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('E3-D2', event)"><rect x="1070" y="328" width="220" height="24"/><text x="1180" y="344" text-anchor="middle" fill="var(--error)">Sai grain hoặc Fact/Dim, sửa lại</text></g>
+          </g>
+
+          <g class="transition-edge edge-loop" data-stage="stage-E stage-E">
+            <path d="M 1510 380 L 1550 380 Q 1570 380 1570 360 L 1570 260 Q 1570 240 1550 240 L 1510 240" fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('E3-E2', event)"><rect x="1480" y="308" width="180" height="24"/><text x="1570" y="324" text-anchor="middle" fill="var(--error)">Sai measure DAX, sửa BC</text></g>
+          </g>
+        </g>
+
+        <!-- Nodes Layer -->
+        <g id="nodes">
+          <g class="state-node" id="node-A1" data-stage="stage-A" onclick="selectState('A1')">
+            <rect x="60" y="65" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="140" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">A1: Dựng repo & Env</text>
+            <text x="140" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">GitHub, Docker PostgreSQL</text>
+          </g>
+
+          <g class="state-node" id="node-A2" data-stage="stage-A" onclick="selectState('A2')">
+            <rect x="60" y="205" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="140" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">A2: Tạo file Context</text>
+            <text x="140" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Hướng dẫn cho AI Agent</text>
+          </g>
+
+          <g class="state-node" id="node-B1" data-stage="stage-B" onclick="selectState('B1')">
+            <rect x="380" y="65" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="460" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">B1: Phân tích NV</text>
+            <text x="460" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Vòng đời khoản vay QTDND</text>
+          </g>
+
+          <g class="state-node" id="node-B2" data-stage="stage-B" onclick="selectState('B2')">
+            <rect x="380" y="205" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="460" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">B2: Xác định Y/C</text>
+            <text x="460" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Báo cáo & KPI (Dư nợ...)</text>
+          </g>
+
+          <g class="state-node" id="node-B3" data-stage="stage-B" onclick="selectState('B3')">
+            <rect x="380" y="345" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="460" y="375" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">B3: Mapping KPI</text>
+            <text x="460" y="395" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">KPI -> Trường Dữ liệu</text>
+          </g>
+
+          <g class="state-node" id="node-C1" data-stage="stage-C" onclick="selectState('C1')">
+            <rect x="700" y="65" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="780" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">C1: ERD Khái niệm</text>
+            <text x="780" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Mô hình hóa dữ liệu gốc</text>
+          </g>
+
+          <g class="state-node" id="node-C2" data-stage="stage-C" onclick="selectState('C2')">
+            <rect x="700" y="205" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="780" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">C2: ERD Logic & DDL</text>
+            <text x="780" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">DB core_banking (PostgreSQL)</text>
+          </g>
+
+          <g class="state-node" id="node-C3" data-stage="stage-C" onclick="selectState('C3')">
+            <rect x="700" y="345" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="780" y="375" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">C3: Sinh Dữ liệu</text>
+            <text x="780" y="395" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Script Python sinh data giả</text>
+          </g>
+
+          <g class="state-node" id="node-C4" data-stage="stage-C" onclick="selectState('C4')">
+            <polygon points="780,480 870,520 780,560 690,520" fill="var(--surface-bright)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="780" y="515" font-family="var(--ff-sans)" font-size="13" font-weight="600" text-anchor="middle" fill="var(--on-surface)">C4: Cổng kiểm tra</text>
+            <text x="780" y="535" font-family="var(--ff-sans)" font-size="11" fill="var(--on-surface-variant)" text-anchor="middle">Dữ liệu đủ tính KPI?</text>
+          </g>
+
+          <g class="state-node" id="node-D1" data-stage="stage-D" onclick="selectState('D1')">
+            <rect x="1020" y="65" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1100" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">D1: Xác định Grain</text>
+            <text x="1100" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Mức độ chi tiết Data Mart</text>
+          </g>
+
+          <g class="state-node" id="node-D2" data-stage="stage-D" onclick="selectState('D2')">
+            <rect x="1020" y="205" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1100" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">D2: Xác định Bảng</text>
+            <text x="1100" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Bảng Fact & Dimension</text>
+          </g>
+
+          <g class="state-node" id="node-D3" data-stage="stage-D" onclick="selectState('D3')">
+            <rect x="1020" y="345" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1100" y="375" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">D3: Star Schema</text>
+            <text x="1100" y="395" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Thiết kế & DDL DB dwh</text>
+          </g>
+
+          <g class="state-node" id="node-E1" data-stage="stage-E" onclick="selectState('E1')">
+            <rect x="1340" y="65" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1420" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">E1: Xây dựng ETL</text>
+            <text x="1420" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Python E-T-L pipeline</text>
+          </g>
+
+          <g class="state-node" id="node-E2" data-stage="stage-E" onclick="selectState('E2')">
+            <rect x="1340" y="205" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1420" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">E2: Power BI</text>
+            <text x="1420" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Mô hình, Measure DAX, Dash</text>
+          </g>
+
+          <g class="state-node" id="node-E3" data-stage="stage-E" onclick="selectState('E3')">
+            <polygon points="1420,340 1510,380 1420,420 1330,380" fill="var(--surface-bright)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1420" y="375" font-family="var(--ff-sans)" font-size="13" font-weight="600" text-anchor="middle" fill="var(--on-surface)">E3: Cổng kiểm thử</text>
+            <text x="1420" y="395" font-family="var(--ff-sans)" font-size="11" fill="var(--on-surface-variant)" text-anchor="middle">Số liệu Power BI khớp gốc?</text>
+          </g>
+
+          <g class="state-node" id="node-F1" data-stage="stage-F" onclick="selectState('F1')">
+            <rect x="1660" y="65" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1740" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">F1: Hoàn thiện</text>
+            <text x="1740" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Viết báo cáo, Slide, Demo</text>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="detail-panel">
+    <div class="detail-header-row">
+      <div>
+        <div style="display:flex; align-items:center; gap: 8px; margin-bottom: 8px;">
+          <span class="badge" id="det-badge">Giai đoạn A</span>
+          <h3 class="lumi-headline-s" id="det-title" style="margin:0;">A1: Dựng repo GitHub...</h3>
+        </div>
+        <p class="lumi-body-m" id="det-obj" style="margin:0;">Mục tiêu: Thiết lập nền tảng quản lý mã nguồn và môi trường database.</p>
+      </div>
+      <div>
+        <label class="lumi-checkbox-label">
+          <input type="checkbox" id="chk-complete" onchange="toggleComplete()">
+          <div class="lumi-checkbox"><svg class="lumi-checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+          Đã hoàn thành
+        </label>
+      </div>
+    </div>
+    
+    <div class="detail-grid">
+      <div class="detail-block">
+        <div class="block-title">Đầu vào / Đầu ra</div>
+        <p class="lumi-body-s" style="margin:0 0 8px 0"><strong>Vào:</strong> <span id="det-in">Nhu cầu khởi tạo dự án</span></p>
+        <p class="lumi-body-s" style="margin:0"><strong>Ra:</strong> <span id="det-out">Repo và môi trường chạy được</span></p>
+      </div>
+      <div class="detail-block">
+        <div class="block-title">Thực thi & Kiểm chứng</div>
+        <p class="lumi-body-s" style="margin:0 0 8px 0"><strong>Công cụ hỗ trợ:</strong> <span id="det-tools" style="color:var(--primary); font-family:var(--ff-mono);">AI Agent (VS Code)</span></p>
+        <p class="lumi-body-s" style="margin:0"><strong>Tiêu chí đạt:</strong> <span id="det-criteria">Chạy lệnh docker-compose up thành công.</span></p>
+      </div>
+      <div class="detail-block">
+        <div class="block-title">Rủi ro & Liên kết</div>
+        <p class="lumi-body-s" style="margin:0 0 8px 0; color:var(--error)"><strong>Rủi ro:</strong> <span id="det-risk">Xung đột port cục bộ.</span></p>
+        <p class="lumi-body-s" style="margin:0">
+          <strong>Trước:</strong> <span id="det-prev" class="link-node">-</span><br>
+          <strong>Sau:</strong> <span id="det-next" class="link-node">A2</span>
+        </p>
+      </div>
+    </div>
+    <!-- Phân vùng dành riêng cho Cổng kiểm tra -->
+    <div id="gate-block" class="detail-block" style="display: none; background: var(--accent-container)">
+      <div class="block-title" style="color: var(--accent-fixed)">Điều kiện rẽ nhánh (Cổng kiểm tra)</div>
+      <p class="lumi-body-s" style="margin:0 0 4px 0"><strong>Đạt (Đi tiếp):</strong> <span id="det-pass">...</span></p>
+      <p class="lumi-body-s" style="margin:0"><strong>Không đạt (Quay lại):</strong> <span id="det-fail">...</span></p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // State Machine Data
+  const DATA = {
+    "A1": {
+      stage: "Giai đoạn A", title: "A1: Dựng repo GitHub, Docker Compose PostgreSQL, môi trường Python",
+      obj: "Thiết lập nền tảng quản lý mã nguồn, CSDL cục bộ và môi trường lập trình ETL.",
+      in: "Ý tưởng dự án, cấu hình máy tính cá nhân.", out: "Repo GitHub init, file docker-compose.yml (Postgres), môi trường venv/Python sẵn sàng.",
+      tools: "AI Agent trong VS Code (viết file cấu hình, cài đặt thư viện).",
+      criteria: "Git kết nối thành công, lệnh 'docker-compose up' chạy CSDL ổn định, Python chạy được file hello world.",
+      risk: "Xung đột port 5432 trên máy cá nhân, lỗi phân quyền thư mục bind mount Docker.",
+      prev: null, next: "A2"
+    },
+    "A2": {
+      stage: "Giai đoạn A", title: "A2: Tạo file context chung và hướng dẫn cho AI agent",
+      obj: "Tạo tài liệu mô tả kiến trúc, luồng dữ liệu (context.md) để cung cấp ngữ cảnh nhất quán cho AI Agent trong suốt quá trình code.",
+      in: "Repo môi trường (A1).", out: "File context chung (.md, .txt) chứa prompt và guideline.",
+      tools: "AI Agent trong VS Code (góp ý cấu trúc tài liệu context).",
+      criteria: "Context mô tả rõ stack công nghệ (Postgres, Python) và mục tiêu khóa luận.",
+      risk: "Context quá dài khiến AI Agent bị tràn token hoặc quên hướng dẫn cũ.",
+      prev: "A1", next: "B1"
+    },
+    "B1": {
+      stage: "Giai đoạn B", title: "B1: Phân tích nghiệp vụ tín dụng",
+      obj: "Hiểu rõ vòng đời thực tế của khoản vay tại QTDND (Hình thành, giải ngân, thu nợ, dư nợ, nhóm nợ).",
+      in: "Tài liệu quy trình nghiệp vụ QTDND thuộc Co-opBank.", out: "Tài liệu nghiệp vụ (sơ đồ state machine, quy tắc chuyển nhóm nợ).",
+      tools: "NotebookLM (Hỏi đáp, tóm tắt quy định nghiệp vụ tín dụng Co-opBank).",
+      criteria: "Vẽ được sơ đồ chuyển đổi trạng thái khoản vay đầy đủ các case chuẩn và rủi ro.",
+      risk: "Hiểu sai khái niệm 'Dư nợ gốc' và 'Dư nợ tính lãi' dẫn đến lệch logic sau này.",
+      prev: "A2", next: "B2"
+    },
+    "B2": {
+      stage: "Giai đoạn B", title: "B2: Xác định yêu cầu báo cáo và KPI sơ bộ",
+      obj: "Chốt danh sách các chỉ số cần đo lường (KPI) và các chiều phân tích (Dimension).",
+      in: "Tài liệu nghiệp vụ (B1).", out: "Danh sách KPI (Dư nợ, Nợ xấu, Giải ngân...) kèm công thức và chiều phân tích (Chi nhánh, SP, Thời gian, Nhóm nợ).",
+      tools: "Perplexity (Tìm kiếm mẫu dashboard tín dụng ngân hàng), NotebookLM.",
+      criteria: "Mỗi KPI phải có công thức tính toán rõ ràng bằng lời.",
+      risk: "Đưa ra KPI quá phức tạp nhưng không có ý nghĩa thiết thực cho QTDND.",
+      prev: "B1", next: "B3"
+    },
+    "B3": {
+      stage: "Giai đoạn B", title: "B3: Mapping KPI -> Trường dữ liệu -> Nguồn",
+      obj: "Liên kết KPI với các sự kiện nghiệp vụ và thực thể dữ liệu cần có để tính toán.",
+      in: "Danh sách KPI có công thức (B2).", out: "Bảng ma trận: [Tên KPI] - [Trường dữ liệu cần] - [Bảng/Thực thể dự kiến chứa].",
+      tools: "Claude / ChatGPT (Phân tích, bóc tách thực thể từ công thức).",
+      criteria: "100% KPI đã chốt đều map được về các trường dữ liệu cụ thể (ví dụ: SoDuGoc, NgayGiaiNgan).",
+      risk: "Bỏ sót các bảng lịch sử (SCD - Slowly Changing Dimension) như lịch sử đổi nhóm nợ.",
+      prev: "B2", next: "C1"
+    },
+    "C1": {
+      stage: "Giai đoạn C", title: "C1: Thiết kế ERD mức khái niệm",
+      obj: "Xây dựng mô hình quan hệ các thực thể nghiệp vụ cốt lõi (Khách hàng, Khoản vay, Hợp đồng, Giao dịch).",
+      in: "Ma trận mapping KPI (B3).", out: "Sơ đồ ERD khái niệm (Conceptual) đã duyệt.",
+      tools: "Claude (Phản biện thiết kế CSDL quan hệ, gợi ý chuẩn hóa 3NF).",
+      criteria: "Đủ thực thể mô phỏng Core Banking tối giản, không bị lặp dữ liệu dư thừa.",
+      risk: "Thiết kế thực thể Giao dịch không tách bạch giữa Giao dịch giải ngân và Giao dịch thu nợ.",
+      prev: "B3", next: "C2"
+    },
+    "C2": {
+      stage: "Giai đoạn C", title: "C2: Thiết kế ERD mức logic và DDL PostgreSQL",
+      obj: "Chuyển đổi ERD khái niệm thành câu lệnh tạo bảng vật lý (DDL) trên schema 'core_banking'.",
+      in: "ERD khái niệm (C1).", out: "Script SQL (DDL) tạo CSDL core_banking hoàn chỉnh với PK, FK.",
+      tools: "AI Agent trong VS Code (Sinh code DDL), Claude.",
+      criteria: "Chạy file DDL trên PostgreSQL không báo lỗi, các khóa ngoại (FK) liên kết chuẩn.",
+      risk: "Chọn sai kiểu dữ liệu (ví dụ dùng INT cho số tiền thay vì DECIMAL/NUMERIC).",
+      prev: "C1", next: "C3"
+    },
+    "C3": {
+      stage: "Giai đoạn C", title: "C3: Tìm và sinh dữ liệu mô phỏng bằng Python",
+      obj: "Tạo ra bộ dữ liệu mock lớn (hàng ngàn khoản vay) phản ánh đúng tỷ lệ nợ xấu, phân bổ theo thời gian.",
+      in: "Cấu trúc CSDL core_banking (C2).", out: "Dữ liệu mô phỏng được insert vào DB (bằng Python Faker/Pandas).",
+      tools: "AI Agent trong VS Code (Viết code Python sinh data hàng loạt).",
+      criteria: "Dữ liệu sinh ra không vi phạm ràng buộc FK, tính logic hợp lý (ví dụ: ngày tất toán >= ngày giải ngân).",
+      risk: "Dữ liệu sinh ngẫu nhiên hoàn toàn, không tạo ra được vòng đời khoản vay thực tế (ví dụ giải ngân nhưng không sinh giao dịch thu nợ).",
+      prev: "C2", next: "C4"
+    },
+    "C4": {
+      stage: "Giai đoạn C", title: "C4: Cổng kiểm tra dữ liệu", isGate: true,
+      obj: "Xác minh xem dữ liệu sinh ra đã đủ để tính toàn bộ các KPI ở B2 chưa.",
+      in: "DB core_banking có dữ liệu (C3), Yêu cầu KPI (B2).", out: "Quyết định chuyển giai đoạn hoặc quay lại sửa đổi.",
+      tools: "AI Agent (Hỗ trợ viết các câu query test nhanh trên PostgreSQL).",
+      criteria: "Mỗi KPI đều có ít nhất 1 câu truy vấn SQL viết tay tính ra được con số có ý nghĩa từ DB gốc.",
+      risk: "Chủ quan chỉ test lượng nhỏ, khi load toàn bộ phát hiện thiếu logic lịch sử.",
+      pass: "Dữ liệu đủ -> Tiếp tục sang D1 (Thiết kế Data Mart).",
+      fail: "Thiếu dữ liệu -> Về C3 sinh thêm.<br>Thiếu trường -> Về C2 sửa DDL.<br>Bất khả thi -> Về B2 gạch bỏ KPI.",
+      prev: "C3", next: "D1 (Nếu đạt)"
+    },
+    "D1": {
+      stage: "Giai đoạn D", title: "D1: Xác định grain",
+      obj: "Xác định hạt dữ liệu (Grain) cho bảng Fact trong Data Mart (ví dụ: Từng khoản vay, hay từng giao dịch hàng ngày?).",
+      in: "Dữ liệu mô phỏng (C4).", out: "Tài liệu thống nhất grain mức chi tiết nhất.",
+      tools: "Claude (Tư vấn Kimball methodology, so sánh Transaction Fact vs Snapshot Fact).",
+      criteria: "Grain phải trả lời được toàn bộ KPI mà không cần join ngược về hệ thống nguồn.",
+      risk: "Chọn grain quá mơ hồ (ví dụ tổng dư nợ theo ngày) làm mất khả năng khoan sâu (drill-down) theo khách hàng.",
+      prev: "C4", next: "D2"
+    },
+    "D2": {
+      stage: "Giai đoạn D", title: "D2: Xác định bảng Fact và Dimension",
+      obj: "Bóc tách các chiều phân tích (Dim Khách hàng, SP, Thời gian) và bảng Sự kiện (Fact Giao dịch, Fact Số dư cuối ngày).",
+      in: "Tài liệu grain (D1).", out: "Danh sách các bảng Fact/Dim chi tiết.",
+      tools: "Claude (Phân tích chuẩn Star Schema).",
+      criteria: "Tách bạch rõ ràng thuộc tính mô tả (vào Dim) và số liệu đo lường (vào Fact).",
+      risk: "Thiết kế nhầm thuộc tính biến đổi theo thời gian (ví dụ Nhóm nợ) vào bảng Dim cố định thay vì xử lý SCD2 hoặc Fact.",
+      prev: "D1", next: "D3"
+    },
+    "D3": {
+      stage: "Giai đoạn D", title: "D3: Thiết kế Star Schema và DDL Data Mart",
+      obj: "Triển khai cấu trúc Star Schema vào PostgreSQL (schema dwh, staging).",
+      in: "Danh sách Fact/Dim (D2).", out: "Script SQL (DDL) khởi tạo Data Mart.",
+      tools: "AI Agent trong VS Code (Sinh code tạo bảng Star Schema).",
+      criteria: "Cấu trúc bảng tuân thủ chặt chẽ kiến trúc Star Schema (Fact chứa Surrogate Key tham chiếu đến Dim).",
+      risk: "Quên tạo Surrogate Key (SK), tiếp tục dùng Business Key (PK gốc) làm khóa chính trong Data Mart.",
+      prev: "D2", next: "E1"
+    },
+    "E1": {
+      stage: "Giai đoạn E", title: "E1: Xây dựng ETL bằng Python",
+      obj: "Viết script Python để Extract (từ core_banking), Transform (làm sạch, map Surrogate Key) và Load (vào dwh).",
+      in: "Data gốc (C3), Cấu trúc Star Schema (D3).", out: "Dữ liệu được nạp thành công vào Data Mart.",
+      tools: "AI Agent trong VS Code (Viết pandas/SQLAlchemy code xử lý ETL).",
+      criteria: "Log ETL không có lỗi; bảng Fact/Dim có dữ liệu, Surrogate Key khớp hoàn hảo.",
+      risk: "Logic Transform sai làm trùng lặp dòng trong Fact hoặc Null các khóa ngoại FK.",
+      prev: "D3", next: "E2"
+    },
+    "E2": {
+      stage: "Giai đoạn E", title: "E2: Xây dựng Dashboard Power BI",
+      obj: "Kết nối Power BI vào PostgreSQL (Data Mart), xây dựng Semantic Model và viết DAX tạo Dashboard.",
+      in: "Data Mart đã có dữ liệu (E1).", out: "Dashboard báo cáo tương tác trực quan hoàn chỉnh.",
+      tools: "Gemini (Gợi ý cách viết các hàm DAX phức tạp như YTD, Time Intelligence).",
+      criteria: "Giao diện sạch, các bộ lọc (Slicer) hoạt động đúng, measure DAX không bị chậm/lag.",
+      risk: "Mô hình kết nối chéo (Many-to-Many) trong Power BI gây sai lệch số liệu khi filter.",
+      prev: "E1", next: "E3"
+    },
+    "E3": {
+      stage: "Giai đoạn E", title: "E3: Cổng kiểm thử đối chiếu", isGate: true,
+      obj: "Kiểm tra tính chính xác của số liệu hiển thị trên Power BI so với dữ liệu gốc ban đầu.",
+      in: "Báo cáo Power BI (E2), DB Core (C3).", out: "Xác nhận số liệu đúng (Pass) hoặc phát hiện sai lệch (Fail).",
+      tools: "Gemini (So sánh tư duy chéo giữa truy vấn SQL và hàm DAX).",
+      criteria: "Tổng dư nợ trên Power BI == Tổng dư nợ tính bằng query tay từ bảng gốc.",
+      risk: "Báo cáo đẹp nhưng số liệu sai bét, dẫn đến mất độ tin cậy của sản phẩm khóa luận.",
+      pass: "Khớp số liệu 100% -> Chuyển sang F1 hoàn thiện.",
+      fail: "Lệch số -> Về E1 sửa ETL.<br>Lỗi mô hình -> Về D2 thiết kế lại Fact/Dim.<br>Tính sai -> Về E2 sửa DAX.",
+      prev: "E2", next: "F1 (Nếu đạt)"
+    },
+    "F1": {
+      stage: "Giai đoạn F", title: "F1: Hoàn thiện báo cáo, slide và demo",
+      obj: "Đóng gói kết quả toàn bộ dự án thành quyển báo cáo khóa luận, slide thuyết trình bảo vệ và kịch bản demo.",
+      in: "Kết quả kiểm thử đạt (E3).", out: "Tài liệu khóa luận bản cuối nộp cho Hội đồng.",
+      tools: "Gemini (Chỉnh sửa văn phong học thuật, dàn ý slide).",
+      criteria: "Báo cáo đúng form chuẩn của trường, slide nổi bật được công nghệ (Postgres, Python, Power BI), kịch bản demo trơn tru.",
+      risk: "Code và Dashboard chạy tốt nhưng viết báo cáo sơ sài, không làm nổi bật được giá trị hệ thống.",
+      prev: "E3", next: null
+    }
+  };
+
+  let completedNodes = new Set();
+  let activeNode = "A1";
+
+  // Pan Zoom State
+  let currentZoom = 1;
+  let panX = 0, panY = 0;
+  let isDragging = false;
+  let startX = 0, startY = 0;
+  const viewport = document.getElementById("viewport");
+  const scene = document.getElementById("scene");
+  const zoomText = document.getElementById("zoom-text");
+
+  function updateTransform() {
+    scene.setAttribute("transform", `matrix(${currentZoom} 0 0 ${currentZoom} ${panX} ${panY})`);
+    zoomText.textContent = `${Math.round(currentZoom * 100)}%`;
+  }
+  function adjustZoom(delta) {
+    const newZoom = Math.min(Math.max(0.5, currentZoom + delta), 2.5);
+    const rect = viewport.getBoundingClientRect();
+    const cx = rect.width / 2, cy = rect.height / 2;
+    panX = cx - (cx - panX) * (newZoom / currentZoom);
+    panY = cy - (cy - panY) * (newZoom / currentZoom);
+    currentZoom = newZoom;
+    updateTransform();
+  }
+  function resetView() { currentZoom = 1; panX = 0; panY = 0; updateTransform(); }
+
+  // Drag logic
+  viewport.addEventListener("pointerdown", (e) => {
+    if (e.target.closest(".state-node") || e.target.closest(".edge-pill") || e.target.closest(".link-node")) return;
+    isDragging = true; startX = e.clientX - panX; startY = e.clientY - panY;
+    viewport.setPointerCapture(e.pointerId);
+  });
+  viewport.addEventListener("pointermove", (e) => {
+    if (!isDragging) return;
+    panX = e.clientX - startX; panY = e.clientY - startY; updateTransform();
+  });
+  viewport.addEventListener("pointerup", (e) => {
+    if (isDragging) { isDragging = false; try { viewport.releasePointerCapture(e.pointerId); } catch(e){} }
+  });
+  viewport.addEventListener("wheel", (e) => {
+    e.preventDefault(); adjustZoom(e.deltaY < 0 ? 0.1 : -0.1);
+  }, { passive: false });
+
+  // Filtering
+  function setFilter(type) {
+    document.querySelectorAll(".filter-group .lumi-chip").forEach(c => c.classList.toggle("is-active", c.dataset.filter === type));
+    const edges = document.querySelectorAll(".transition-edge");
+    const nodes = document.querySelectorAll(".state-node");
+
+    edges.forEach(e => e.classList.remove("fade-out"));
+    nodes.forEach(n => n.classList.remove("fade-out"));
+
+    if (type === "main") {
+      edges.forEach(e => { if(e.classList.contains("edge-loop")) e.classList.add("fade-out"); });
+    } else if (type === "loop") {
+      edges.forEach(e => { if(e.classList.contains("edge-main")) e.classList.add("fade-out"); });
+    } else if (type.startsWith("stage-")) {
+      nodes.forEach(n => { if(n.dataset.stage !== type) n.classList.add("fade-out"); });
+      edges.forEach(e => { if(!e.dataset.stage.includes(type)) e.classList.add("fade-out"); });
+    }
+  }
+
+  // Interactivity
+  function selectState(id) {
+    activeNode = id;
+    document.querySelectorAll(".state-node").forEach(n => n.classList.remove("is-selected"));
+    document.getElementById(`node-${id}`).classList.add("is-selected");
+
+    const d = DATA[id];
+    document.getElementById("det-badge").textContent = d.stage;
+    document.getElementById("det-title").textContent = d.title;
+    document.getElementById("det-obj").textContent = "Mục tiêu: " + d.obj;
+    document.getElementById("det-in").textContent = d.in;
+    document.getElementById("det-out").textContent = d.out;
+    document.getElementById("det-tools").textContent = d.tools;
+    document.getElementById("det-criteria").textContent = d.criteria;
+    document.getElementById("det-risk").textContent = d.risk;
+    
+    setupLink("det-prev", d.prev);
+    setupLink("det-next", d.next?.split(" ")[0]); // Strip extra text like "(Nếu đạt)"
+
+    // Checkbox state
+    document.getElementById("chk-complete").checked = completedNodes.has(id);
+
+    // Gate visibility
+    const gate = document.getElementById("gate-block");
+    if(d.isGate) {
+      gate.style.display = "block";
+      document.getElementById("det-pass").innerHTML = d.pass;
+      document.getElementById("det-fail").innerHTML = d.fail;
+    } else {
+      gate.style.display = "none";
+    }
+  }
+
+  function setupLink(elId, targetId) {
+    const el = document.getElementById(elId);
+    if (!targetId || !DATA[targetId]) {
+      el.textContent = "-"; el.onclick = null; el.style.cursor = "default"; el.style.textDecoration = "none";
+    } else {
+      el.textContent = targetId + ": " + DATA[targetId].title.split(":")[1].trim();
+      el.style.cursor = "pointer"; el.style.textDecoration = "underline";
+      el.onclick = () => selectState(targetId);
+    }
+  }
+
+  function selectEdge(edgeId, event) {
+    if(event) event.stopPropagation();
+    // Reset view to origin nodes based on edge name (e.g., A1-A2 -> select A1)
+    const fromId = edgeId.split("-")[0];
+    if (DATA[fromId]) selectState(fromId);
+  }
+
+  function toggleComplete() {
+    const chk = document.getElementById("chk-complete");
+    if (chk.checked) completedNodes.add(activeNode);
+    else completedNodes.delete(activeNode);
+    
+    // Update SVG
+    document.getElementById(`node-${activeNode}`).classList.toggle("is-completed", chk.checked);
+    // Update counter
+    document.getElementById("progress-text").textContent = completedNodes.size;
+  }
+
+  // Init
+  selectState("A1");
+
+  // Iframe auto-resize
+  (function autoResize() {
+    function notifyHeight() {
+      const c = document.querySelector('.widget-container') || document.body;
+      const h = Math.ceil(Math.max(c.getBoundingClientRect().bottom, c.scrollHeight));
+      window.parent.postMessage({type: 'widget-resize', height: h}, '*');
+    }
+    window.addEventListener('load', () => setTimeout(notifyHeight, 150));
+    new ResizeObserver(notifyHeight).observe(document.querySelector('.widget-container') || document.body);
+  })();
+</script>
+</body>
+</html>
