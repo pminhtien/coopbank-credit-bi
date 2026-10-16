@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main - Sơ đồ công việc Khóa luận tốt nghiệp</title>
+   
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+
+<div class="widget-container widget-wrapper">
+    
+    <div class="header-section">
+    <div>
+        <h2 class="lumi-headline-m" style="margin:0">Sơ đồ luồng công việc</h2>
+        <p class="lumi-body-s" style="margin:4px 0 0 0; color:var(--on-surface-variant)">Quản lý tiến độ Data Mart & Power BI - Ngân hàng Hợp tác xã Việt Nam</p>
+    </div>
+    <div class="progress-badge">Tiến độ: <span id="progress-text" style="color:var(--primary)">0</span>/16 công việc</div>
+    </div>
+
+    <div class="toolbar">
+    <div class="filter-group">
+        <button class="lumi-chip is-active" data-filter="all" onclick="setFilter('all')">Tất cả</button>
+        <button class="lumi-chip" data-filter="main" onclick="setFilter('main')">Luồng chính</button>
+        <button class="lumi-chip" data-filter="loop" onclick="setFilter('loop')">Vòng lặp sửa lại</button>
+        <div style="width: 1px; background: var(--stroke-default); margin: 0 4px;"></div>
+        <button class="lumi-chip" data-filter="stage-A" onclick="setFilter('stage-A')">GĐ A</button>
+        <button class="lumi-chip" data-filter="stage-B" onclick="setFilter('stage-B')">GĐ B</button>
+        <button class="lumi-chip" data-filter="stage-C" onclick="setFilter('stage-C')">GĐ C</button>
+        <button class="lumi-chip" data-filter="stage-D" onclick="setFilter('stage-D')">GĐ D</button>
+        <button class="lumi-chip" data-filter="stage-E" onclick="setFilter('stage-E')">GĐ E</button>
+        <button class="lumi-chip" data-filter="stage-F" onclick="setFilter('stage-F')">GĐ F</button>
+    </div>
+    <div class="zoom-controls">
+        <button class="zoom-btn" onclick="adjustZoom(-0.15)">&minus;</button>
+        <span class="zoom-readout" id="zoom-text">100%</span>
+        <button class="zoom-btn" onclick="adjustZoom(0.15)">&plus;</button>
+        <button class="zoom-btn" onclick="resetView()">&#x21bb;</button>
+    </div>
+    </div>
+
+    <div class="viewport" id="viewport">
+    <!-- ViewBox wide enough for 6 columns. Centers: A=140, B=460, C=780, D=1100, E=1420, F=1740. Total width 1880 -->
+    <svg class="diagram-svg" viewBox="0 0 1880 620">
+        <defs>
+        <marker id="arrow-main" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+            <path d="M 2 1 L 8 5 L 2 9" fill="none" stroke="var(--on-surface)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="arrow-danger" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+            <path d="M 2 1 L 8 5 L 2 9" fill="none" stroke="var(--error)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        </defs>
+
+        <g id="scene" transform="matrix(1 0 0 1 0 0)">
+        
+        <!-- Stage Titles -->
+        <g fill="var(--on-surface-variant)" font-family="var(--ff-sans)" font-size="16" font-weight="600" text-anchor="middle">
+            <text x="120" y="40">Giai đoạn A - Nền tảng</text>
+            <text x="460" y="40">Giai đoạn B - Phân tích</text>
+            <text x="780" y="40">GĐ C - Nguồn dữ liệu</text>
+            <text x="1100" y="40">GĐ D - Thiết kế Data Mart</text>
+            <text x="1420" y="40">GĐ E - Triển khai</text>
+            <text x="1740" y="40">GĐ F - Hoàn thiện</text>
+        </g>
+
+        <!-- Edges Layer -->
+        <g id="edges">
+            <!-- Main Flow -->
+            <g class="transition-edge edge-main" data-stage="stage-A stage-A">
+            <line x1="120" y1="135" x2="120" y2="205" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('A1-A2', event)">
+                <rect x="24" y="158" width="190" height="24"/>
+                    <text x="120" y="174" text-anchor="middle" fill="var(--on-surface)">
+                        Rep o và môi trường chạy được
+                    </text>
+            </g>
+        </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-A stage-B">
+            <path d="M 220 240 L 280 240 Q 300 240 300 220 L 300 120 Q 300 100 320 100 L 360 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('A2-B1', event)">
+                <rect x="235" y="158" width="120" height="24"/>
+                    <text x="295" y="174" text-anchor="middle" fill="var(--on-surface)">
+                        File context chung
+                    </text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-B stage-B">
+            <line x1="460" y1="135" x2="460" y2="205" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('B1-B2', event)"><rect x="375" y="158" width="170" height="24"/><text x="460" y="174" text-anchor="middle" fill="var(--on-surface)">Tài liệu nghiệp vụ đã chốt</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-B stage-B">
+            <line x1="460" y1="275" x2="460" y2="345" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('B2-B3', event)"><rect x="370" y="298" width="180" height="24"/><text x="460" y="314" text-anchor="middle" fill="var(--on-surface)">Danh sách KPI có công thức</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-B stage-C">
+            <path d="M 540 380 L 600 380 Q 620 380 620 360 L 620 120 Q 620 100 640 100 L 700 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('B3-C1', event)">
+                <rect x="570" y="88" width="100" height="90"/>
+                <text x="620" y="104" text-anchor="middle" fill="var(--on-surface)">
+                        
+                        <tspan x="620" y="104">Bảng KPI</tspan>
+                        <tspan x="620" y="120">|</tspan>
+                        <tspan x="620" y="136">Trường dữ liệu</tspan>
+                        <tspan x="620" y="152">|</tspan>
+                        <tspan x="620" y="168">Nguồn</tspan>
+                        
+                </text>
+            </g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-C stage-C">
+            <line x1="780" y1="135" x2="780" y2="215" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('C1-C2', event)">
+                <rect x="700" y="163" width="160" height="24"/>
+                <text x="780" y="179" text-anchor="middle" fill="var(--on-surface)">ERD khái niệm đã duyệt</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-C stage-C">
+            <line x1="780" y1="290" x2="780" y2="370" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('C2-C3', event)">
+                <rect x="715" y="318" width="130" height="24"/>
+                <text x="780" y="334" text-anchor="middle" fill="var(--on-surface)">DDL core_banking</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-C stage-C">
+            <line x1="780" y1="445" x2="780" y2="525" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('C3-C4', event)">
+                <rect x="715" y="473" width="130" height="24"/>
+                <text x="780" y="489" text-anchor="middle" fill="var(--on-surface)">
+                    Dữ liệu mô phỏng</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-C stage-D">
+            <path d="M 870 520 L 920 520 Q 940 520 940 500 L 940 120 Q 940 100 960 100 L 1020 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('C4-D1', event)"><rect x="895" y="88" width="90" height="24"/><text x="940" y="104" text-anchor="middle" fill="var(--on-surface)">Dữ liệu đủ</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-D stage-D">
+            <line x1="1100" y1="135" x2="1100" y2="205" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('D1-D2', event)"><rect x="1050" y="158" width="100" height="24"/><text x="1100" y="174" text-anchor="middle" fill="var(--on-surface)">Tài liệu grain</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-D stage-D">
+            <line x1="1100" y1="275" x2="1100" y2="345" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('D2-D3', event)"><rect x="1035" y="298" width="130" height="24"/><text x="1100" y="314" text-anchor="middle" fill="var(--on-surface)">Danh sách Fact/Dim</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-D stage-E">
+            <path d="M 1180 380 L 1240 380 Q 1260 380 1260 360 L 1260 120 Q 1260 100 1280 100 L 1340 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('D3-E1', event)"><rect x="1225" y="88" width="70" height="24"/><text x="1260" y="104" text-anchor="middle" fill="var(--on-surface)">DDL dwh</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-E stage-E">
+            <line x1="1420" y1="135" x2="1420" y2="205" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('E1-E2', event)"><rect x="1325" y="158" width="190" height="24"/><text x="1420" y="174" text-anchor="middle" fill="var(--on-surface)">Dữ liệu đã nạp Data Mart</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-E stage-E">
+            <line x1="1420" y1="275" x2="1420" y2="340" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('E2-E3', event)"><rect x="1355" y="298" width="130" height="24"/><text x="1420" y="314" text-anchor="middle" fill="var(--on-surface)">Báo cáo hoàn chỉnh</text></g>
+            </g>
+
+            <g class="transition-edge edge-main" data-stage="stage-E stage-F">
+            <path d="M 1510 380 L 1560 380 Q 1580 380 1580 360 L 1580 120 Q 1580 100 1600 100 L 1660 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
+            <g class="edge-pill" onclick="selectEdge('E3-F1', event)"><rect x="1525" y="88" width="110" height="24"/><text x="1580" y="104" text-anchor="middle" fill="var(--on-surface)">Kết quả kiểm thử</text></g>
+            </g>
+
+            <!-- Return Loops (Error style) -->
+            <g class="transition-edge edge-loop" data-stage="stage-C stage-C">
+            <path d="
+            M 690 575 
+            L 630 575 
+            Q 610 575 610 555 
+            L 610 400 
+            Q 610 380 630 380 
+            L 700 380
+            " fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('C4-C3', event)">
+                <rect x="585" y="504" width="90" height="48"/>
+                <text text-anchor="middle" fill="var(--error)">
+                    <tspan x="630" y="520">Thiếu dữ liệu</tspan>
+                    <tspan x="630" y="536">->Sinh thêm</tspan>
+                </text>
+            </g>
+            </g>
+
+            <g class="transition-edge edge-loop" data-stage="stage-C stage-C">
+            <path d="
+            M 690 575 
+            L 580 575
+            Q 560 575 560 555 
+            L 560 260 
+            Q 560 240 580 240 
+            L 690 240" 
+            fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('C4-C2', event)">
+                <rect x="510" y="428" width="95" height="60"/>
+                <text text-anchor="middle" fill="var(--error)">
+                    <tspan x="560" y="444">Thiếu thực thể</tspan>
+                    <tspan x="560" y="460">/thuộc tính</tspan>
+                    <tspan x="560" y="476">->Sửa ERD</tspan>
+                </text>
+            </g>
+            </g>
+
+            <g class="transition-edge edge-loop" data-stage="stage-C stage-B">
+            <path d="
+            M 690 575 
+            L 440 575
+            Q 420 575 420 555
+            L 420 260 
+            " 
+            fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('C4-B2', event)">
+                <rect x="350" y="478" width="130" height="48"/>
+                <text text-anchor="middle" fill="var(--error)">
+                    <tspan x="415" y="494">KPI không tính được,</tspan>
+                    <tspan x="415" y="510">bỏ hoặc hoãn KPI</tspan>
+                </text>
+            </g>
+            </g>
+
+            <g class="transition-edge edge-loop" data-stage="stage-E stage-E">
+            <path d="M 1330 380 L 1290 380 Q 1270 380 1270 360 L 1270 120 Q 1270 100 1290 100 L 1330 100" fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('E3-E1', event)"><rect x="1185" y="238" width="170" height="24"/><text x="1270" y="254" text-anchor="middle" fill="var(--error)">Số liệu lệch, sửa logic ETL</text></g>
+            </g>
+
+            <g class="transition-edge edge-loop" data-stage="stage-E stage-D">
+            <path d="M 1330 380 L 1200 380 Q 1180 380 1180 360 L 1180 260 Q 1180 240 1160 240 L 1140 240" fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('E3-D2', event)"><rect x="1070" y="328" width="220" height="24"/><text x="1180" y="344" text-anchor="middle" fill="var(--error)">Sai grain hoặc Fact/Dim, sửa lại</text></g>
+            </g>
+
+            <g class="transition-edge edge-loop" data-stage="stage-E stage-E">
+            <path d="M 1510 380 L 1550 380 Q 1570 380 1570 360 L 1570 260 Q 1570 240 1550 240 L 1510 240" fill="none" marker-end="url(#arrow-danger)"/>
+            <g class="edge-pill" onclick="selectEdge('E3-E2', event)"><rect x="1480" y="308" width="180" height="24"/><text x="1570" y="324" text-anchor="middle" fill="var(--error)">Sai measure DAX, sửa BC</text></g>
+            </g>
+        </g>
+
+        <!-- Nodes Layer -->
+        <g id="nodes">
+            <g class="state-node" id="node-A1" data-stage="stage-A" onclick="selectState('A1')">
+            <rect x="20" y="65" width="200" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="120" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">A1: Dựng repo & Env</text>
+            <text x="120" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">GitHub, Docker PostgreSQL</text>
+            </g>
+
+            <g class="state-node" id="node-A2" data-stage="stage-A" onclick="selectState('A2')">
+            <rect x="20" y="205" width="200" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="120" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">A2: Tạo file Context</text>
+            <text x="120" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Hướng dẫn cho AI Agent</text>
+            </g>
+
+            <g class="state-node" id="node-B1" data-stage="stage-B" onclick="selectState('B1')">
+            <rect x="360" y="65" width="200" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="460" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">B1: Phân tích NV</text>
+            <text x="460" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Vòng đời khoản vay QTDND</text>
+            </g>
+
+            <g class="state-node" id="node-B2" data-stage="stage-B" onclick="selectState('B2')">
+            <rect x="160" y="205" width="200" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="460" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">B2: Xác định Y/C</text>
+            <text x="460" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Báo cáo & KPI (Dư nợ...)</text>
+            </g>
+
+            <g class="state-node" id="node-B3" data-stage="stage-B" onclick="selectState('B3')">
+            <rect x="360" y="345" width="200" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="460" y="375" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">B3: Mapping KPI</text>
+            <text x="460" y="395" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">KPI -> Trường Dữ liệu</text>
+            </g>
+
+            <g class="state-node" id="node-C1" data-stage="stage-C" onclick="selectState('C1')">
+            <rect x="700" y="60" width="200" height="75" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="780" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">C1: ERD Khái niệm</text>
+            <text x="780" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Mô hình hóa dữ liệu gốc</text>
+            </g>
+
+            <g class="state-node" id="node-C2" data-stage="stage-C" onclick="selectState('C2')">
+            <rect x="700" y="215" width="200" height="75" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="780" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">C2: ERD Logic & DDL</text>
+            <text x="780" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">DB core_banking (PostgreSQL)</text>
+            </g>
+
+            <g class="state-node" id="node-C3" data-stage="stage-C" onclick="selectState('C3')">
+            <rect x="700" y="370" width="200" height="75" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="780" y="386" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">C3: Sinh Dữ liệu</text>
+            <text x="780" y="406" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Script Python sinh data giả</text>
+            </g>
+
+            <g class="state-node" id="node-C4" data-stage="stage-C" onclick="selectState('C4')">
+            <polygon points="780,525 870,575 780,625 690,575" fill="var(--surface-bright)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="780" y="565" font-family="var(--ff-sans)" font-size="13" font-weight="600" text-anchor="middle" fill="var(--on-surface)">
+                C4: Cổng kiểm tra
+            </text>
+            <text x="780" y="585" font-family="var(--ff-sans)" font-size="11" fill="var(--on-surface-variant)" text-anchor="middle">
+                Dữ liệu đủ tính KPI?
+            </text>
+            </g>
+
+            <g class="state-node" id="node-D1" data-stage="stage-D" onclick="selectState('D1')">
+            <rect x="1020" y="65" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1100" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">D1: Xác định Grain</text>
+            <text x="1100" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Mức độ chi tiết Data Mart</text>
+            </g>
+
+            <g class="state-node" id="node-D2" data-stage="stage-D" onclick="selectState('D2')">
+            <rect x="1020" y="205" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1100" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">D2: Xác định Bảng</text>
+            <text x="1100" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Bảng Fact & Dimension</text>
+            </g>
+
+            <g class="state-node" id="node-D3" data-stage="stage-D" onclick="selectState('D3')">
+            <rect x="1020" y="345" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1100" y="375" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">D3: Star Schema</text>
+            <text x="1100" y="395" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Thiết kế & DDL DB dwh</text>
+            </g>
+
+            <g class="state-node" id="node-E1" data-stage="stage-E" onclick="selectState('E1')">
+            <rect x="1340" y="65" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1420" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">E1: Xây dựng ETL</text>
+            <text x="1420" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Python E-T-L pipeline</text>
+            </g>
+
+            <g class="state-node" id="node-E2" data-stage="stage-E" onclick="selectState('E2')">
+            <rect x="1340" y="205" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1420" y="235" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">E2: Power BI</text>
+            <text x="1420" y="255" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Mô hình, Measure DAX, Dash</text>
+            </g>
+
+            <g class="state-node" id="node-E3" data-stage="stage-E" onclick="selectState('E3')">
+            <polygon points="1420,340 1510,390 1420,440 1330,390" fill="var(--surface-bright)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1420" y="375" font-family="var(--ff-sans)" font-size="13" font-weight="600" text-anchor="middle" fill="var(--on-surface)">
+                E3: Cổng kiểm thử</text>
+            <text x="1420" y="395" font-family="var(--ff-sans)" font-size="11" fill="var(--on-surface-variant)" text-anchor="middle">
+                Số liệu Power BI khớp gốc?</text>
+            </g>
+
+            <g class="state-node" id="node-F1" data-stage="stage-F" onclick="selectState('F1')">
+            <rect x="1660" y="65" width="160" height="70" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
+            <text x="1740" y="95" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">F1: Hoàn thiện</text>
+            <text x="1740" y="115" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Viết báo cáo, Slide, Demo</text>
+            </g>
+        </g>
+        </g>
+    </svg>
+    </div>
+
+    <div class="detail-panel">
+    <div class="detail-header-row">
+        <div>
+        <div style="display:flex; align-items:center; gap: 8px; margin-bottom: 8px;">
+            <span class="badge" id="det-badge">Giai đoạn A</span>
+            <h3 class="lumi-headline-s" id="det-title" style="margin:0;">A1: Dựng repo GitHub...</h3>
+        </div>
+        <p class="lumi-body-m" id="det-obj" style="margin:0;">Mục tiêu: Thiết lập nền tảng quản lý mã nguồn và môi trường database.</p>
+        </div>
+        <div>
+        <label class="lumi-checkbox-label">
+            <input type="checkbox" id="chk-complete" onchange="toggleComplete()">
+            <div class="lumi-checkbox"><svg class="lumi-checkmark" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+            Đã hoàn thành
+        </label>
+        </div>
+    </div>
+    
+    <div class="detail-grid">
+        <div class="detail-block">
+        <div class="block-title">Đầu vào / Đầu ra</div>
+        <p class="lumi-body-s" style="margin:0 0 8px 0"><strong>Vào:</strong> <span id="det-in">Nhu cầu khởi tạo dự án</span></p>
+        <p class="lumi-body-s" style="margin:0"><strong>Ra:</strong> <span id="det-out">Repo và môi trường chạy được</span></p>
+        </div>
+        <div class="detail-block">
+        <div class="block-title">Thực thi & Kiểm chứng</div>
+        <p class="lumi-body-s" style="margin:0 0 8px 0"><strong>Công cụ hỗ trợ:</strong> <span id="det-tools" style="color:var(--primary); font-family:var(--ff-mono);">AI Agent (VS Code)</span></p>
+        <p class="lumi-body-s" style="margin:0"><strong>Tiêu chí đạt:</strong> <span id="det-criteria">Chạy lệnh docker-compose up thành công.</span></p>
+        </div>
+        <div class="detail-block">
+        <div class="block-title">Rủi ro & Liên kết</div>
+        <p class="lumi-body-s" style="margin:0 0 8px 0; color:var(--error)"><strong>Rủi ro:</strong> <span id="det-risk">Xung đột port cục bộ.</span></p>
+        <p class="lumi-body-s" style="margin:0">
+            <strong>Trước:</strong> <span id="det-prev" class="link-node">-</span><br>
+            <strong>Sau:</strong> <span id="det-next" class="link-node">A2</span>
+        </p>
+        </div>
+    </div>
+    <!-- Phân vùng dành riêng cho Cổng kiểm tra -->
+    <div id="gate-block" class="detail-block" style="display: none; background: var(--accent-container)">
+        <div class="block-title" style="color: var(--accent-fixed)">Điều kiện rẽ nhánh (Cổng kiểm tra)</div>
+        <p class="lumi-body-s" style="margin:0 0 4px 0"><strong>Đạt (Đi tiếp):</strong> <span id="det-pass">...</span></p>
+        <p class="lumi-body-s" style="margin:0"><strong>Không đạt (Quay lại):</strong> <span id="det-fail">...</span></p>
+    </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
