@@ -1,0 +1,17 @@
+# Kết nối và truy vấn PostgreSQL
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+
+# Xử lý dữ liệu
+pandas>=2.0
+numpy>=1.26
+
+# Sinh dữ liệu mô phỏng (có locale vi_VN)
+Faker>=24.0
+
+# Đọc cấu hình từ file .env
+python-dotenv>=1.0
+
+# Tiện ích
+tqdm>=4.66
+pytest>=8.0
