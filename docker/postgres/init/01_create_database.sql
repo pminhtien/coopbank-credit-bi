@@ -1,0 +1,2 @@
+CREATE DATABASE source;
+CREATE DATABASE data_mart;
