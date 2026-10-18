@@ -113,7 +113,7 @@ const DATA = {
 },
 "D3": {
     stage: "Giai đoạn D", title: "D3: Thiết kế Star Schema và DDL Data Mart",
-    obj: "Triển khai cấu trúc Star Schema vào PostgreSQL (schema dwh, staging).",
+    obj: "Triển khai cấu trúc Star Schema vào PostgreSQL (schema data mart, staging).",
     in: "Danh sách Fact/Dim (D2).", out: "Script SQL (DDL) khởi tạo Data Mart.",
     tools: "AI Agent trong VS Code (Sinh code tạo bảng Star Schema).",
     criteria: "Cấu trúc bảng tuân thủ chặt chẽ kiến trúc Star Schema (Fact chứa Surrogate Key tham chiếu đến Dim).",

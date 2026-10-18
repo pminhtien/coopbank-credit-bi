@@ -168,7 +168,9 @@
 
             <g class="transition-edge edge-main" data-stage="stage-D stage-E">
             <path d="M 1180 380 L 1240 380 Q 1260 380 1260 360 L 1260 120 Q 1260 100 1280 100 L 1340 100" fill="none" stroke="var(--on-surface)" stroke-width="1.5" marker-end="url(#arrow-main)"/>
-            <g class="edge-pill" onclick="selectEdge('D3-E1', event)"><rect x="1225" y="88" width="70" height="24"/><text x="1260" y="104" text-anchor="middle" fill="var(--on-surface)">DDL dwh</text></g>
+            <g class="edge-pill" onclick="selectEdge('D3-E1', event)">
+                <rect x="1225" y="88" width="70" height="24"/>
+                <text x="1260" y="104" text-anchor="middle" fill="var(--on-surface)">DDL data mart</text></g>
             </g>
 
             <g class="transition-edge edge-main" data-stage="stage-E stage-E">
@@ -340,8 +342,10 @@
 
             <g class="state-node" id="node-D3" data-stage="stage-D" onclick="selectState('D3')">
             <rect x="1020" y="370" width="200" height="75" rx="16" fill="var(--surface-container)" stroke="var(--outline)" stroke-width="1.5"/>
-            <text x="1100" y="400" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">D3: Star Schema</text>
-            <text x="1100" y="420" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">Thiết kế & DDL DB dwh</text>
+            <text x="1100" y="400" font-family="var(--ff-sans)" font-size="14" font-weight="600" text-anchor="middle" fill="var(--on-surface)">
+                D3: Star Schema</text>
+            <text x="1100" y="420" font-family="var(--ff-mono)" font-size="12" fill="var(--on-surface-variant)" text-anchor="middle">
+                Thiết kế & DDL DB data mart</text>
             </g>
 
             <g class="state-node" id="node-E1" data-stage="stage-E" onclick="selectState('E1')">
