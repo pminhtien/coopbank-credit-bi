@@ -2546,9 +2546,77 @@ body[data-not-sent] > #vis-container ~ #not-sent {
 #erd svg.erDiagram .row-rect-odd rect,
 #erd svg.erDiagram .row-rect-even path,
 #erd svg.erDiagram .row-rect-even rect { stroke: none !important; }
-</style>
-<h2 class="sr-only" style="position:absolute;left:-9999px">ERD mức logic của nghiệp vụ cho vay gồm 18 bảng với khóa chính, khóa ngoại và thuộc tính.</h2>
-<div id="erd" style="overflow-x:auto"></div>
+  #diagram-zoom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+  }
+  #diagram-zoom .pan-hint {
+    font-size: 13px;
+  }
+  #diagram-zoom button {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-1);
+    color: var(--text-primary);
+    font: inherit;
+    cursor: pointer;
+  }
+  #diagram-zoom button:hover:not(:disabled) {
+    background: var(--surface-0);
+  }
+  #diagram-zoom button:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+  }
+  #diagram-zoom button:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+  #diagram-zoom output {
+    min-width: 4ch;
+    text-align: center;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+  }
+  #erd {
+    max-height: 80vh;
+    overflow: auto;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  #erd.is-dragging {
+    cursor: grabbing;
+  }
+  #erd svg.erDiagram {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    pointer-events: none;
+  }
+  @media (max-width: 480px) {
+    #diagram-zoom .pan-hint {
+      display: none;
+    }
+  }
+  </style>
+  <h2 class="sr-only" style="position:absolute;left:-9999px">ERD mức logic của nghiệp vụ cho vay gồm 18 bảng với khóa chính, khóa ngoại và thuộc tính.</h2>
+  <div id="diagram-zoom" role="group" aria-label="Điều khiển thu phóng sơ đồ">
+    <span class="pan-hint">Kéo chuột để di chuyển sơ đồ</span>
+    <button id="zoom-out" type="button" aria-label="Thu nhỏ sơ đồ" title="Thu nhỏ">−</button>
+    <output id="zoom-level" aria-live="polite">100%</output>
+    <button id="zoom-reset" type="button" aria-label="Đặt lại mức thu phóng" title="Đặt lại">Đặt lại</button>
+    <button id="zoom-in" type="button" aria-label="Phóng to sơ đồ" title="Phóng to">+</button>
+  </div>
+  <div id="erd" style="overflow-x:auto"></div>
 <script type="module">
 import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
 const themeMode = document.documentElement.dataset.mode;
@@ -2760,4 +2828,58 @@ document.querySelectorAll('#erd svg.erDiagram .node').forEach(node => {
 document.querySelectorAll('#erd svg.erDiagram .row-rect-odd path, #erd svg.erDiagram .row-rect-even path').forEach(p => {
   p.setAttribute('stroke', 'none');
 });
+const diagram = document.querySelector('#erd svg.erDiagram');
+const zoomOut = document.getElementById('zoom-out');
+const zoomIn = document.getElementById('zoom-in');
+const zoomReset = document.getElementById('zoom-reset');
+const zoomLevel = document.getElementById('zoom-level');
+const diagramViewport = document.getElementById('erd');
+let zoom = 1;
+const minZoom = 0.5;
+const maxZoom = 2;
+const updateZoom = () => {
+  diagram.style.width = `${zoom * 100}%`;
+  diagram.style.maxWidth = 'none';
+  zoomLevel.value = `${Math.round(zoom * 100)}%`;
+  zoomOut.disabled = zoom <= minZoom;
+  zoomIn.disabled = zoom >= maxZoom;
+};
+zoomOut.addEventListener('click', () => {
+  zoom = Math.max(minZoom, Math.round((zoom - 0.1) * 10) / 10);
+  updateZoom();
+});
+zoomIn.addEventListener('click', () => {
+  zoom = Math.min(maxZoom, Math.round((zoom + 0.1) * 10) / 10);
+  updateZoom();
+});
+zoomReset.addEventListener('click', () => {
+  zoom = 1;
+  updateZoom();
+});
+let dragStart;
+diagramViewport.addEventListener('pointerdown', event => {
+  if (event.pointerType !== 'mouse' || event.button !== 0) return;
+  dragStart = {
+    x: event.clientX,
+    y: event.clientY,
+    scrollLeft: diagramViewport.scrollLeft,
+    scrollTop: diagramViewport.scrollTop,
+  };
+  diagramViewport.setPointerCapture(event.pointerId);
+  diagramViewport.classList.add('is-dragging');
+  event.preventDefault();
+});
+diagramViewport.addEventListener('pointermove', event => {
+  if (!dragStart) return;
+  diagramViewport.scrollLeft = dragStart.scrollLeft - (event.clientX - dragStart.x);
+  diagramViewport.scrollTop = dragStart.scrollTop - (event.clientY - dragStart.y);
+});
+const endDrag = () => {
+  dragStart = undefined;
+  diagramViewport.classList.remove('is-dragging');
+};
+diagramViewport.addEventListener('pointerup', endDrag);
+diagramViewport.addEventListener('pointercancel', endDrag);
+diagramViewport.addEventListener('lostpointercapture', endDrag);
+updateZoom();
 </script></div></body></html>
